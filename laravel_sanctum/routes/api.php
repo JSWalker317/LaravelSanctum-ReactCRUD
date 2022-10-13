@@ -17,11 +17,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 // protected routes
-// Route::middleware('auth:sanctum')->group(function(){
-//     Route::get('/user',[AuthController::class, 'user']);
-//     Route::get('/logout',[AuthController::class, 'logout']);
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('/user',[AuthController::class, 'user']);
+    Route::get('/logout',[AuthController::class, 'logout']);
 
-// });
+});
 
 
 // public routes
@@ -33,7 +33,7 @@ Route::controller(ProductController::class)->group(function() {
     Route::get('/products', 'index');
     Route::post('/product', 'store');
     Route::get('/psroduct/{id}', 'show');
-    Route::patch('/product/{id}', 'update');
+    Route::put('/product/{id}', 'update');
     Route::delete('/product/{id}', 'destroy');
 
 
